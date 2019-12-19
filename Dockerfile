@@ -21,7 +21,7 @@ RUN apt-get install --assume-yes make
 
 # install pyenv prerequisites.
 RUN apt-get install --assume-yes build-essential libssl-dev zlib1g-dev libbz2-dev
-RUN apt-get install --assume-yes libreadline-dev libsqllite3-dev llvm libncurses5-dev
+RUN apt-get install --assume-yes libreadline-dev libsqlite3-dev llvm libncurses5-dev
 RUN apt-get install --assume-yes libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
 RUN apt-get install --assume-yes python-openssl
 
