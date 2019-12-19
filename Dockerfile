@@ -44,7 +44,7 @@ RUN curl https://pyenv.run | bash
 # setup pyenv.
 RUN echo "export PATH=~/.pyenv/bin:$PATH" >> ~/.bash_profile
 RUN echo "eval '$(pyenv init -)'" >> ~/.bash_profile
-EUN echo "eval '$(pyenv virtualenv-init -)'" >> ~/.bash_profile
+RUN echo "eval '$(pyenv virtualenv-init -)'" >> ~/.bash_profile
 
 # install ruby versions.
 RUN pyenv install 3.6.9
