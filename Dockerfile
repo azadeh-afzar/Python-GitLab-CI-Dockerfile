@@ -19,6 +19,9 @@ RUN apt-get install --assume-yes gcc
 # install make.
 RUN apt-get install --assume-yes make
 
+# install zlib.
+RUN apt-get install --assume-yes zlib1g
+
 # set locale.
 RUN apt-get install --assume-yes locales
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
