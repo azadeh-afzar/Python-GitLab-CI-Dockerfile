@@ -8,12 +8,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 # change default shell from sh to bash.
 SHELL ["/bin/bash", "-l", "-c"]
 
-# config apt package sources.
-RUN echo "deb http://archive.ubuntu.com/ubuntu bionic main universe" >> /etc/apt/sources.list
-RUN echo "deb http://archive.ubuntu.com/ubuntu bionic main-security universe" >> /etc/apt/sources.list
-RUN echo "deb http://archive.ubuntu.com/ubuntu bionic-updates main universe" >> /etc/apt/sources.list
-
-# update apt database.
 RUN apt-get update --assume-yes
 
 # install apt utils to speed up configs.
