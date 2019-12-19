@@ -50,6 +50,12 @@ RUN pyenv install 3.6.9
 RUN pyenv install 3.7.5
 RUN pyenv install 3.8.0
 
+# make sure default python version is set to system.
+RUN pyenv global system 
+
+# install pipenv using default system python version (3.6 in ubuntu bionic).
+RUN pip install pipenv
+
 # specify working directory.
 ENV TESTBUILD ~/test_and_build
 RUN mkdir -p $TESTBUILD
