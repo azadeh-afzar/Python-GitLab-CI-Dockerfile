@@ -63,7 +63,7 @@ RUN pyenv global system
 RUN apt-get install --assume-yes python3-pip
 
 # install pipenv using default system python version (3.6 in ubuntu bionic).
-RUN pip install pipenv
+RUN pip3 install pipenv
 
 # specify working directory.
 ENV TESTBUILD ~/test_and_build
