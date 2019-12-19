@@ -51,7 +51,7 @@ RUN echo "export PATH=~/.pyenv/bin:$PATH" >> ~/.bash_profile
 RUN echo "eval '$(pyenv init -)'" >> ~/.bash_profile
 RUN echo "eval '$(pyenv virtualenv-init -)'" >> ~/.bash_profile
 
-# install ruby versions.
+# install python versions.
 RUN pyenv install 3.6.9
 RUN pyenv install 3.7.5
 RUN pyenv install 3.8.0
