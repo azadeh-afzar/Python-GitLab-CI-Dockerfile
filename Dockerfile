@@ -16,6 +16,9 @@ RUN apt-get install --assume-yes --no-install-recommends apt-utils
 # install GNU C Compiler.
 RUN apt-get install --assume-yes gcc
 
+# install make.
+RUN apt-get install --assume-yes make
+
 # set locale.
 RUN apt-get install --assume-yes locales
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
