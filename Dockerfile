@@ -13,8 +13,8 @@ RUN apt-get update --assume-yes
 # install apt utils to speed up configs.
 RUN apt-get install --assume-yes --no-install-recommends apt-utils
 
-# install latest libc6 library.
-RUN apt-get install --assume-yes libc6
+# install GNU C Compiler.
+RUN apt-get install --assume-yes gcc
 
 # set locale.
 RUN apt-get install --assume-yes locales
