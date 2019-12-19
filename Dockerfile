@@ -19,8 +19,11 @@ RUN apt-get install --assume-yes gcc
 # install make.
 RUN apt-get install --assume-yes make
 
-# install zlib.
-RUN apt-get install --assume-yes zlib1g-dev
+# install pyenv prerequisites.
+RUN apt-get install --assume-yes build-essential libssl-dev zlib1g-dev libbz2-dev
+RUN apt-get install --assume-yes libreadline-dev libsqllite3-dev llvm libncurses5-dev
+RUN apt-get install --assume-yes libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+RUN apt-get install --assume-yes python-openssl
 
 # set locale.
 RUN apt-get install --assume-yes locales
