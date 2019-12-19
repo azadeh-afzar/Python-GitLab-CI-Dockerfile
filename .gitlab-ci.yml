@@ -10,7 +10,7 @@ default:
   after_script:
     - docker logout
 
-build_tagged:
+build tagged:
   stage: build
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:latest -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG} .
@@ -19,7 +19,7 @@ build_tagged:
   only:
     - tags
 
-build_untaged:
+build untaged:
   stage: build
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:ready .
@@ -29,7 +29,7 @@ build_untaged:
   except:
     - tags
 
-build_merge_requests:
+build merge requests:
   stage: build
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:merge .
