@@ -30,9 +30,6 @@ RUN apt-get install --assume-yes git
 # install curl.
 RUN apt-get install --assume-yes curl
 
-# install pipenv.
-RUN apt-get install --assume-yes pipenv
-
 # install codeclimate coverage reporter.
 RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/bin/cc-test-reporter
 RUN chmod +x /usr/bin/cc-test-reporter
