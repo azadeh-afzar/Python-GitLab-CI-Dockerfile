@@ -20,7 +20,7 @@ RUN apt-get install --assume-yes gcc
 RUN apt-get install --assume-yes make
 
 # install zlib.
-RUN apt-get install --assume-yes zlib1g
+RUN apt-get install --assume-yes zlib1g-dev
 
 # set locale.
 RUN apt-get install --assume-yes locales
