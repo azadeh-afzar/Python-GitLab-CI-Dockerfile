@@ -16,7 +16,7 @@ default:
 
 gitlab build tagged:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:latest -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG} .
@@ -27,7 +27,7 @@ gitlab build tagged:
 
 docker build tagged:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${DOCKER_REGISTRY_USER} --password ${DOCKER_REGISTRY_PASSWORD} ${DOCKER_REGISTRY}
   script:
     - docker build --pull -t ${DOCKER_REGISTRY_IMAGE}:latest -t ${DOCKER_REGISTRY_IMAGE}:${CI_COMMIT_TAG} .
@@ -49,7 +49,7 @@ github build tagged:
 
 gitlab build untaged:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:ready .
@@ -61,7 +61,7 @@ gitlab build untaged:
 
 docker build untaged:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${DOCKER_REGISTRY_USER} --password ${DOCKER_REGISTRY_PASSWORD} ${DOCKER_REGISTRY}
   script:
     - docker build --pull -t ${DOCKER_REGISTRY_IMAGE}:ready .
@@ -73,7 +73,7 @@ docker build untaged:
 
 github build untaged:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${GITHUB_REGISTRY_USER} --password ${GITHUB_REGISTRY_PASSWORD} ${GITHUB_REGISTRY}
   script:
     - docker build --pull -t ${GITHUB_REGISTRY_IMAGE}:ready .
@@ -85,7 +85,7 @@ github build untaged:
 
 gitlab build merge requests:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
     - docker build --pull -t ${CI_REGISTRY_IMAGE}:merge .
@@ -95,7 +95,7 @@ gitlab build merge requests:
 
 docker build merge requests:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${DOCKER_REGISTRY_USER} --password ${DOCKER_REGISTRY_PASSWORD} ${DOCKER_REGISTRY}
   script:
     - docker build --pull -t ${DOCKER_REGISTRY_IMAGE}:merge .
@@ -105,7 +105,7 @@ docker build merge requests:
 
 github build merge requests:
   stage: build
-	before_script:
+  before_script:
     - docker login --username ${GITHUB_REGISTRY_USER} --password ${GITHUB_REGISTRY_PASSWORD} ${GITHUB_REGISTRY}
   script:
     - docker build --pull -t ${GITHUB_REGISTRY_IMAGE}:merge .
