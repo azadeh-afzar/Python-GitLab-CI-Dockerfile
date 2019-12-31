@@ -71,7 +71,7 @@ RUN pip3 install --upgrade wheel
 RUN pip3 install --upgrade twine
 
 # install pipenv using default system python version (3.6 in ubuntu bionic).
-RUN pip3 install --upgrade pipenv
+RUN pip3 install pipenv
 
 # specify working directory.
 ENV TESTBUILD ~/test_and_build
