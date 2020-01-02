@@ -70,6 +70,3 @@ ENV TESTBUILD ~/test_and_build
 RUN mkdir -p $TESTBUILD
 WORKDIR $TESTBUILD
 
-RUN whereis pipenv
-
-
