@@ -62,16 +62,8 @@ RUN pyenv global system
 # install pip for sytem python (manually installed pythons via pyenv already have pip installed).
 RUN apt-get install --assume-yes python3-pip
 
-# upgrade pip.
-RUN pip3 install --upgrade pip
-
-# install python packages.
-RUN pip3 install --upgrade setuptools
-RUN pip3 install --upgrade wheel
-RUN pip3 install --upgrade twine
-
 # install pipenv using default system python version (3.6 in ubuntu bionic).
-RUN pip3 install pipenv
+RUN pip3 install --upgrade pipenv
 
 # specify working directory.
 ENV TESTBUILD ~/test_and_build
