@@ -45,6 +45,14 @@ RUN apt-get install --assume-yes python3-pip
 # install pipenv using default system python version (3.6 in ubuntu bionic).
 RUN pip3 install --upgrade pipenv
 
+# upgrade pip.
+RUN pip3 install --upgrade pip
+
+# install other python dependencies.
+RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade wheel
+RUN pip3 install --upgrade twine
+
 # install pyenv.
 RUN curl https://pyenv.run | bash
 
