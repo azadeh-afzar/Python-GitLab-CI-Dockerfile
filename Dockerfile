@@ -39,9 +39,11 @@ RUN apt-get install --assume-yes git
 # install curl.
 RUN apt-get install --assume-yes curl
 
-# install codeclimate coverage reporter.
-RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/bin/cc-test-reporter
-RUN chmod +x /usr/bin/cc-test-reporter
+# install pip for sytem python (manually installed pythons via pyenv already have pip installed).
+RUN apt-get install --assume-yes python3-pip
+
+# install pipenv using default system python version (3.6 in ubuntu bionic).
+RUN pip3 install --upgrade pipenv
 
 # install pyenv.
 RUN curl https://pyenv.run | bash
@@ -59,11 +61,9 @@ RUN pyenv install 3.8.0
 # make sure default python version is set to system.
 RUN pyenv global system 
 
-# install pip for sytem python (manually installed pythons via pyenv already have pip installed).
-RUN apt-get install --assume-yes python3-pip
-
-# install pipenv using default system python version (3.6 in ubuntu bionic).
-RUN pip3 install --upgrade pipenv
+# install codeclimate coverage reporter.
+RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/bin/cc-test-reporter
+RUN chmod +x /usr/bin/cc-test-reporter
 
 # specify working directory.
 ENV TESTBUILD ~/test_and_build
