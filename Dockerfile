@@ -2,6 +2,9 @@ FROM azadehafzarhub/gitlab-ci-ubuntu-build:latest
 
 LABEL maintainer="Mohammad Mahdi Baghbani Pourvahid <MahdiBaghbani@protonmail.com>"
 
+# set frontend to noneinteractive.
+ARG DEBIAN_FRONTEND=noninteractive
+
 # install pip for sytem python (manually installed pythons via pyenv already have pip installed).
 RUN apt install --yes python3-pip
 
