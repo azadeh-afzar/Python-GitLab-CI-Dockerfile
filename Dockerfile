@@ -17,9 +17,6 @@ xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 # install pipenv using default system python version.
 RUN pip3 install --upgrade pipenv
 
-# upgrade pip.
-RUN pip3 install --upgrade pip
-
 # install other python dependencies.
 RUN pip3 install --upgrade setuptools
 RUN pip3 install --upgrade wheel
@@ -32,6 +29,9 @@ RUN curl https://pyenv.run | bash
 RUN echo "export PATH=~/.pyenv/bin:$PATH" >> ~/.bash_profile
 RUN echo "eval '$(pyenv init -)'" >> ~/.bash_profile
 RUN echo "eval '$(pyenv virtualenv-init -)'" >> ~/.bash_profile
+
+# set compiler flag.
+ARG CFLAGS='-O2'
 
 # install python versions.
 RUN pyenv install 3.6.13
