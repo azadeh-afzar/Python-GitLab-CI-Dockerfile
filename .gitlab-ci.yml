@@ -94,4 +94,3 @@ build merge requests:
     - docker build -t ${DOCKER_REGISTRY_IMAGE}:merge .
   only:
     - merge_requests
-
