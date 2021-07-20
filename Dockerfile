@@ -34,9 +34,10 @@ RUN echo "eval '$(pyenv virtualenv-init -)'" >> ~/.bash_profile
 ARG CFLAGS='-O2'
 
 # install python versions.
-RUN pyenv install 3.6.13
-RUN pyenv install 3.7.10
-RUN pyenv install 3.8.8
+RUN pyenv install 3.6.14
+RUN pyenv install 3.7.11
+RUN pyenv install 3.8.11
+RUN pyenv install 3.9.6
 
 # make sure default python version is set to system.
 RUN pyenv global system
